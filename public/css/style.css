@@ -7,3 +7,24 @@
 h1 {
     color: rgb(0, 122, 156);
 }
+
+img{
+    width: 100px;
+    height: auto;
+}
+
+.logo{
+    width: 15vw;
+}
+
+.hide-robot{
+    display: none;
+}
+
+.response-form{
+    display: none;
+}
+
+.toggle-form{
+    cursor: pointer;
+}

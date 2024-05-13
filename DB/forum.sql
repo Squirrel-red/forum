@@ -32,7 +32,7 @@ REPLACE INTO `category` (`id_category`, `name`) VALUES
 	(2, 'Jeunesse'),
 	(3, 'Musique'),
 	(4, 'Livres'),
-	(5, 'Elan');
+	(5, 'Formation');
 
 -- Listage de la structure de table forum_elenajaeg. post
 CREATE TABLE IF NOT EXISTS `post` (

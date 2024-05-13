@@ -1,0 +1,60 @@
+<?php
+namespace Model\Managers;
+
+use App\Manager;
+use App\DAO;
+
+class PostManager extends Manager
+{
+
+    // on indique la classe POO et la table correspondante en BDD pour le manager concerné
+    protected $className = "Model\Entities\Post";
+    protected $tableName = "post";
+
+    public function __construct()
+    {
+        parent::connect();
+    }
+
+    //récupérer tous les posts d'un topic spécific par son id
+
+    public function findPostsByTopic($id)
+    {
+
+        $sql = "SELECT * 
+                    FROM " . $this->tableName . " t 
+                    WHERE t.topic_id = :id";
+
+        // la requête renvoie plusieurs enregistrements --> getMultipleResults
+        return $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]),
+            $this->className
+        );
+    }
+
+    public function findPostsByUser($id)
+    {
+
+        $sql = "SELECT * 
+                    FROM " . $this->tableName . " u
+                    WHERE u.user_id = :id";
+
+        // la requête renvoie plusieurs enregistrements --> getMultipleResults
+        return $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]),
+            $this->className
+        );
+    }
+
+    public function updatePost($data, $id)
+    {
+        $sql = "UPDATE post
+                SET " . $data . "
+                WHERE post.id_post = :id";
+
+        return DAO::update($sql, ["id" => $id]);
+
+    }
+
+
+}
