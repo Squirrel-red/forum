@@ -117,13 +117,13 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- Listage des données de la table forum_elenajaeg.user : ~7 rows (environ)
 REPLACE INTO `user` (`id_user`, `username`, `email`, `password`, `registerDate`, `role`, `avatar`, `status`) VALUES
-	(2, 'admin1', 'admin@gmail.com', '$2y$10$uFKy8AbYNFOWoNBmCCxbAOXUSuDaY.xHR6yy4.ZjIwwkvPLxeyOp2*', '2024-03-27 15:57:05', 'role_admin', 'User-avatar.png', 1),
-	(3, 'elena_', 'elena@exemple.com', '$2y$10$7ZsR7PvyRgLX1FJ8iKJfKuvINM4fwn0vea2DFG1lvR51E5Gn.VOma', '2024-04-02 15:46:09', 'role_user', '6613a33ca10915.96096367.webp', 0),
-	(4, 'admin', 'admin@exemple.com', '$2y$10$sEozIfFq7m/7qQ8j6I5IaeucT.xpEKOo7QRxiEVYi6W5IJyIJ5zF.', '2024-04-03 13:39:40', 'role_admin', '6613a48a04d0a7.72813701.webp', 0),
-	(5, 'kev', 'azerty2@gmail.com', '$2y$10$CBbVlbc8YwG7oHHsQcyqX.mtQu/zRBk9eJo4ewr7vF/WSxBKbxb6e', '2024-04-04 10:28:45', 'role_user', 'User-avatar.png', 0),
-	(6, 'testeur', 'test@exe.fr', '$2y$10$nR7NEg5xDLfbvP/Qx7FiNu7clqW9zSd4642itpCx5hXtPbnOuzSSK', '2024-04-05 20:41:18', 'role_user', '6613d60a16afb5.26446301.webp', 0),
-	(8, 'Utilisateur supprimé', 'Utilisateur supprimé', '$2y$10$y0eQ8hWk02h.i8cAtwWTzeC/GLNSDULpjj.uJ6P.BCwnrjOeStigi', '2024-04-08 14:53:52', 'role_user', '', 2),
-	(9, 'Utilisateur supprimé', 'Utilisateur supprimé', '$2y$10$pTXwHdycb0IA37qmRmiMd.o3uBXf99L82KS3Rjq9tXwBHwJxW1lCe', '2024-04-08 15:02:19', 'role_user', '', 2);
+	(2, 'admin1', 'admin@gmail.com', '$2y$10$uFKy8AbYNFOWoNBmCCxbAOXUSuDaY.xHR6yy4.ZjIwwkvPLxeyOp2*', '2024-03-27 15:57:05', 'role_admin', 'admin1.jpg', 1),
+	(3, 'elena_', 'elena@exemple.com', '$2y$10$7ZsR7PvyRgLX1FJ8iKJfKuvINM4fwn0vea2DFG1lvR51E5Gn.VOma', '2024-04-02 15:46:09', 'role_user', 'elena.jpg', 0),
+	(4, 'admin', 'admin@exemple.com', '$2y$10$sEozIfFq7m/7qQ8j6I5IaeucT.xpEKOo7QRxiEVYi6W5IJyIJ5zF.', '2024-04-03 13:39:40', 'role_admin', 'admin.jpg', 0),
+	(5, 'kev', 'azerty2@gmail.com', '$2y$10$CBbVlbc8YwG7oHHsQcyqX.mtQu/zRBk9eJo4ewr7vF/WSxBKbxb6e', '2024-04-04 10:28:45', 'role_user', 'kev.jpg', 0),
+	(6, 'testeur', 'test@exe.fr', '$2y$10$nR7NEg5xDLfbvP/Qx7FiNu7clqW9zSd4642itpCx5hXtPbnOuzSSK', '2024-04-05 20:41:18', 'role_user', 'testeur.jpg', 0),
+	(8, 'Utilisateur supprimé', 'Utilisateur supprimé', '$2y$10$y0eQ8hWk02h.i8cAtwWTzeC/GLNSDULpjj.uJ6P.BCwnrjOeStigi', '2024-04-08 14:53:52', 'role_user', 'suppr1.jpg', 2),
+	(9, 'Utilisateur supprimé', 'Utilisateur supprimé', '$2y$10$pTXwHdycb0IA37qmRmiMd.o3uBXf99L82KS3Rjq9tXwBHwJxW1lCe', '2024-04-08 15:02:19', 'role_user', 'suppr2.jpg', 2);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

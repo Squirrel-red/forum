@@ -1,30 +1,387 @@
-* {
+:root {
+    --darkblue: #223281;
+    --bluegrey: rgba(56, 65, 173, 0.75);
+    --lightgrey: #707f91;
+    --white: #a6afb8;
+    --transitionTime: 0.3s
+  }
+  
+
+  /* /////// GENERAL /////// */
+  * {
+    color: var(--darkblue);
     margin: 0;
     padding: 0;
+    vertical-align: top;
     box-sizing: border-box;
-}
+    line-height: 1.2em
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
 
-h1 {
-    color: rgb(0, 122, 156);
-}
+  .body-container {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  #wrapper {
+  /*  background-color: var(--white);*/
+    min-height: 80vh; 
+    justify-content: center; 
+    position: 0;
+  }
 
-img{
-    width: 100px;
-    height: auto;
-}
+  main {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    width: 100%;
+  }
+  
 
-.logo{
-    width: 15vw;
-}
+  
+  /* /////////// COMMONS //////////// */
+  
+  h3,
+  h4 {
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: fit-content;
+  }
+  
+  h3 {
+    margin: 10px auto 50px auto;
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    margin: 10px 5% 10px 5%;
+    font-size: 1.2rem;
+  }
+  
+  .title {
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
 
-.hide-robot{
+  .subtitle {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 5px 0 10px 0;
+    padding: 0 5%;
+  }
+  
+  section {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  hr {
+    margin: 50px auto 25px auto;
+    width: 60%;
+    border-width: 3px;
+  }
+
+
+  
+  /*///////// LINKS /////////*/
+  .link {
+    display: inline-flex;
+    transition: var(--transitionTime);
+    margin: 0 1%;
+  
+    a {
+      transition: var(--transitionTime);
+      color: azure;
+  
+      &:hover {
+        color: var(--lightgrey);
+      }
+    }
+  
+    &:hover {
+      a {
+        color: var(--lightgrey);
+      }
+    }
+  }
+  
+  
+  /*//////// CARDS CONTAINER /////////*/
+  
+  .cards-container {
+    display: flex;
+    padding: 20px 0;
+    padding-left: 10px;
+    margin-right: 10px;
+    transition: var(--transitionTime);
+  
+    figure {
+      width: 200px;
+      font-weight: 600;
+      position: relative;
+      margin: 2px;
+      transition: var(--transitionTime);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+  
+        img {
+          z-index: 2;
+          min-width: 100%;
+          min-height: 100%;
+          transition: var(--transitionTime);
+        }
+  
+        .img-back {
+          position: absolute;
+        }
+      }
+    }
+  
+    figcaption {
+      width: 100%;
+    }
+
+  
+  
+  .add {
+    background-color: rgba(45, 135, 93, 0.792);
+  }
+  
+  .remove {
+    background-color: rgba(135, 45, 45, 0.792);
+  }
+  
+  .disappear {
+    animation-duration: 1.6s;
+    animation-name: disappear;
+  }
+  
+  
+  
+  /* //////////// HEADER //////////// */
+  header {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    background-color: var(--darkblue);
+    box-shadow: rgb(35, 51, 67) 0px 20px 30px -10px;
+    color: white;
+  
+
+    /*////////// NAV //////////*/
+    .navbar {
+      height: 100%;
+  
+      ul {
+        display: flex;
+        height: 100%;
+        align-items: center;
+  
+        a {
+          color: white;
+          padding: 5px;
+          row-gap: 10px;
+        }
+      }
+  
+      i {
+        color: white;
+      }
+    }
+  
+    #connect-button {
+      color: white;
+      text-decoration: none;
+      background-color: var(--lightgrey);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+    }
+  
+    /* menu burger buttons */
+    #close-button {
+      padding: 5px;
+      position: absolute;
+      right: 50px;
+      top: 25px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+  
+    #toggle-menu {
+      font-size: 1.5rem;
+      cursor: pointer;
+  
+      i {
+        color: white;
+      }
+    }
+  }
+  
+  #logo-container {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    color: aliceblue;
+    transition: var(--transitionTime);
+  
+    figcaption {
+      color: white;
+    }
+  
+    img {
+      width: 50px;
+      background-color: #dbcaca;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+  
+    &:hover {
+      transform: scale(1.15)
+    }
+  }
+
+  
+  
+  /* /////////// ACCUEIL //////////// */
+
+
+  
+  
+  .acteurCard {
+    /* Empeche les cards de rétrécir à cause du flex de cardsContainer */
+    flex-shrink: 0;
+  
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 0 25px;
+    border: 2px solid #2B2D42;
+    border-radius: 20px;
+    position: relative;
+  
+    figure {
+      margin-right: 20px;
+    }
+  
+    .editButton {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transitionTime);
+  
+      &:hover {
+        transform: scale(1.2);
+      }
+  
+      &:active {
+        transform: scale(0.8);
+        transition: 0s;
+      }
+    }
+  }
+  
+/* affichage */
+  .row.row-cols-3 {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* //////////// FOOTER //////////// */
+  footer {
+    height: 20vh;
+    background-color: var(--darkblue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    * {
+      color: white;
+    }
+  }
+  
+  #footerContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: bottom;
+    row-gap: 10px;
+
+    #footerDescription {
+      margin-top: 10px;
+    }
+  
+    #contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      li {
+        padding: 5px;
+  
+        i {
+          transition: var(--transitionTime);
+        }
+  
+        &:hover {
+          i {
+            color: var(--lightgrey);
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  }
+  .copy {
+    padding: 15px 0;
+  
+    a {
+      padding-left: 5px;
+      display: inline-block;
+    }
+  
+    &:hover a {
+      animation: meAnimation 3s infinite;
+    }
+  }
+  
+
+  .hide-robot{
     display: none;
-}
+  }
 
-.response-form{
+  .response-form{
     display: none;
-}
+  }
 
-.toggle-form{
+  .toggle-form{
     cursor: pointer;
-}
+  }
+  
+  
+  
+  

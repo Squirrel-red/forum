@@ -1,7 +1,9 @@
-<h1>Règlement</h1>
+<ol
+        <a href="" target="_blank">
+        <h1>Règlement</h1><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe et maxime aliquid dolore iste aliquam sunt aperiam deserunt ratione?
+            Nobis quae magnam tenetur sint laudantium rem praesentium beatae suscipit eveniet!
+        </p>
+        </a>
 
-<ol>
-    <li>Soyez polis</li>
-    <li>Soyez curieux</li>
-    <li><a href="https://www.youtube.com/watch?v=8RH7n5aKP94" target="_blank">The Most Popular PHP Frameworks to Use in 2023</a></li>
 </ol>
