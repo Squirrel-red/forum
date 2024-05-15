@@ -55,7 +55,7 @@
                                                 <?php
                                                 // si l'utilisateur est connecté 
                                                 ?>
-                                                <li class="link"><a href="index.php?ctrl=forum&action=userProfile&id=<?= App\Session::getUser()->getId() ?>">Profil</a>
+                                                <li class="link"><a href="index.php?ctrl=security&action=userProfile&id=<?= App\Session::getUser()->getId() ?>">Profil</a>
                                                 </li>
 
                                                 <li class="link"><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>

@@ -38,8 +38,8 @@ if (!isset($_SESSION['user'])) { ?>
                 <?= $profil->getEmail() ?>
             </p>
 
-            <a href="index.php?ctrl=forum&action=updateProfil" class="btn btn-outline-dark py=1">Modifier</a>
-            <a href="index.php?ctrl=forum&action=updatePassword" class="btn btn-outline-dark py=1">Modifier le mot de
+            <a href="index.php?ctrl=security&action=updateProfil" class="btn btn-outline-dark py=1">Modifier</a>
+            <a href="index.php?ctrl=security&action=updatePassword" class="btn btn-outline-dark py=1">Modifier le mot de
                 passe</a>
 
         </div>
@@ -109,5 +109,5 @@ if ($profil->getUsername() == "Utilisateur supprimé") {
     <?php }
 }
 if (App\Session::getUser() == $profil) { ?>
-    <a class="delete-user-btn btn btn-danger" href="index.php?ctrl=forum&action=deleteUser">Supprimer le compte</a>
+    <a class="delete-user-btn btn btn-danger" href="index.php?ctrl=security&action=deleteUser">Supprimer le compte</a>
 <?php } ?>
