@@ -161,14 +161,14 @@ class SecurityController extends AbstractController
                     $_SESSION['user'] = $userUpdated;
 
                     Session::addFlash('success', 'Mot de passe modifié !');
-                    $this->redirectTo('forum', 'userProfile', $id);
+                    $this->redirectTo('security', 'userProfile', $id);
                 } else {
                     Session::addFlash('error', 'Mot de passe trop court ou incorrect');
-                    $this->redirectTo('forum', 'updatePassword', $id);
+                    $this->redirectTo('security', 'updatePassword', $id);
                 }
             } else {
                 Session::addFlash('error', 'Mauvais mot de passe');
-                $this->redirectTo('forum', 'updatePassword', $id);
+                $this->redirectTo('security', 'updatePassword', $id);
             }
 
         }
@@ -253,17 +253,17 @@ class SecurityController extends AbstractController
 
                         } else {
                             Session::addFlash('error', "Erreur de fichier");
-                            $this->redirectTo('forum', 'updateProfil', $id);
+                            $this->redirectTo('security', 'updateProfil', $id);
 
                         }
                     } else {
                         Session::addFlash('error', "Fichier trop lourd");
-                        $this->redirectTo('forum', 'updateProfil', $id);
+                        $this->redirectTo('security', 'updateProfil', $id);
 
                     }
                 } else {
                     Session::addFlash('error', "Type du fichier non accepté");
-                    $this->redirectTo('forum', 'updateProfil', $id);
+                    $this->redirectTo('security', 'updateProfil', $id);
 
                 }
             }
@@ -313,11 +313,11 @@ class SecurityController extends AbstractController
                     $_SESSION['user'] = $userUpdated;
 
                     Session::addFlash('success', 'Profil modifié !');
-                    $this->redirectTo('forum', 'userProfile', $id);
+                    $this->redirectTo('security', 'userProfile', $id);
                     exit;
                 } else {
                     //no data to update, back to profile page
-                    $this->redirectTo('forum', 'userProfile', $id);
+                    $this->redirectTo('security', 'userProfile', $id);
                 }
             }
         }

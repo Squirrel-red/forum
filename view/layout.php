@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="<?= $meta_description ?>">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!--<script src="https://cdn.tiny.cloud/1/zg3mwraazn1b2ezih16je1tc6z7gwp5yd4pod06ae5uai8pa/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="public/css/style.css">
@@ -14,22 +13,18 @@
     <body>
         <div class="body-container" id="wrapper"> 
             <div id="mainpage">
-                <!-- c'est ici que les messages (erreur ou succès) s'affichent-->
-                <h3 class="message" style="color: red">
-                    <?= App\Session::getFlash("error") ?>
-                </h3>
-                <h3 class="message" style="color: green">
-                    <?= App\Session::getFlash("success") ?>
-                </h3>
+
                 <header>
                 <nav class="navbar navbar-expand-lg">
+                    <div id="close-button">
+                          <i class="fa-solid fa-x"></i>
+                    </div>
+
                     <div class="container-fluid">
 
                         <figure id="logo-container">
                           <a href="index.php?ctrl=home"><img src="public/img/logo/forum.png" alt=""></a>
                         <figure id="logo-container">
-
-
 
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav">
@@ -39,7 +34,7 @@
                                 // si l'utiliseur connecté est un admin
                                 if (App\Session::isAdmin()) {
                                     ?>
-                                    <li class="link"><a href="index.php?ctrl=home&action=users">Utilisateurs</a></li>
+                                    <li class="link"><a href="index.php?ctrl=security&action=users">Utilisateurs</a></li>
                                 <?php } ?>
 
                                 <li class="link"><a href="index.php?ctrl=forum&action=index">Catégories</a></li>
@@ -47,18 +42,19 @@
 
                             <div class="nav navbar-nav me-auto">
                                 <?php if (App\Session::getUser()) { ?>
-                                    <ul class="navbar-nav me-auto">
-                                        <li class="link dropdown">
-                                            <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown"
-                                                href="#"><span class="fs-3"><?= App\Session::getUser() ?></span></a>
-                                            <ul class="dropdown-menu">
+                                    <ul class="navbar-nav">
+                                        <li class="link">
+                                            <a href="#"><span class="fs-3"><?= App\Session::getUser() ?></span></a>
+
+                                            <ul>
                                                 <?php
                                                 // si l'utilisateur est connecté 
                                                 ?>
                                                 <li class="link"><a href="index.php?ctrl=security&action=userProfile&id=<?= App\Session::getUser()->getId() ?>">Profil</a>
                                                 </li>
 
-                                                <li class="link"><a href="index.php?ctrl=security&action=logout">Déconnexion</a></li>
+                                                <li class="link"><a href="index.php?ctrl=security&action=logout">Déconnexion</a>
+                                                </li>
                                             </ul>
                                     </ul>
                                 <?php } else { ?>
@@ -71,14 +67,23 @@
 
                         </div>
 
-                        <div id="close-button">
-                          <i class="fa-solid fa-x"></i>
-                        </div>
-
                     </div>
 
                 </nav>
+
+                <div id="toggle-menu">
+                 <i class="fa-solid fa-bars"></i>
+                </div>
+
                 </header>
+
+                <!-- c'est ici que les messages (erreur ou succès) s'affichent-->
+                <h3 class="message" style="color: red">
+                    <?= App\Session::getFlash("error") ?>
+                </h3>
+                <h3 class="message" style="color: green">
+                    <?= App\Session::getFlash("success") ?>
+                </h3>
 
             <a href="#" class="btn btn-outline-dark btn-floating btn-lg"
                 style="position: fixed; bottom: 20px; right: 20px; z-index: 1;">
@@ -88,6 +93,7 @@
                 <main id="forum" class = "body-container">
                     <?= $page ?>
                 </main>
+                
             </div>
 
             <footer class="footer">
@@ -173,20 +179,7 @@
                 $(".unban-btn").on("click", function () {
                     return confirm("Êtes-vous sûr de vouloir débannir cet utilisateur ?")
                 })
-                // tinymce.init({
-                    // selector: '.post',
-                    // menubar: false,
-                    // plugins: [
-                        // 'advlist autolink lists link image charmap print preview anchor',
-                        // 'searchreplace visualblocks code fullscreen',
-                        // 'insertdatetime media table paste code help wordcount'
-                    // ],
-                    // toolbar: 'undo redo | formatselect | ' +
-                    // 'bold italic backcolor | alignleft aligncenter ' +
-                    // 'alignright alignjustify | bullist numlist outdent indent | ' +
-                    // 'removeformat | help',
-                    // content_css: '//www.tiny.cloud/css/codepen.min.css'
-                // });
+
             })
         </script>
         <script src="https://kit.fontawesome.com/19a031a4c5.js" crossorigin="anonymous"></script>

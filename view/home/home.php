@@ -4,8 +4,12 @@ $categories = $result['data']['categories'];
 
 <h1>BIENVENUE SUR LE FORUM</h1>
 
-<p>Retrouvez vos sujets de discussion favoris, un forum plein de diversité et politiquement correct! N'hésitez pas à
+<hr>
+
+<p>Retrouvez vos sujets de discussion favoris, un forum plein de diversité et politiquement correct! <br> N'hésitez pas à
     contacter notre équipe de modération pour tout soucis.</p>
+
+<hr>    
 
 <?php if (!isset($_SESSION['user'])) { ?>
     <p>
@@ -13,6 +17,9 @@ $categories = $result['data']['categories'];
         <a class="btn btn-dark m-1" href="index.php?ctrl=security&action=register">S'inscrire</a>
     </p>
 <?php } ?>
+
+<hr>
+
 <div class="row row-cols-3">
     <?php foreach ($categories as $category) { ?>
         <div class="card m-2" style='width: fit-content'>
