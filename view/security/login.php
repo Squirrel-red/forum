@@ -14,7 +14,7 @@
 
             <p>
                 <label class="form-label">
-                    Nom d'utilisateur :
+                    Pseudonyme :
                     <input type="text" name="username" class="form-control">
                 </label>
             </p>

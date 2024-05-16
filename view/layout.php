@@ -15,10 +15,8 @@
             <div id="mainpage">
 
                 <header>
+
                 <nav class="navbar navbar-expand-lg">
-                    <div id="close-button">
-                          <i class="fa-solid fa-x"></i>
-                    </div>
 
                     <div class="container-fluid">
 
@@ -27,7 +25,8 @@
                         <figure id="logo-container">
 
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav">
+
+                            <ul class="btn btn-outline-primary">
                                 <li class="link"><a href="index.php">Accueil</a></li>
 
                                 <?php
@@ -42,11 +41,10 @@
 
                             <div class="nav navbar-nav me-auto">
                                 <?php if (App\Session::getUser()) { ?>
-                                    <ul class="navbar-nav">
-                                        <li class="link">
-                                            <a href="#"><span class="fs-3"><?= App\Session::getUser() ?></span></a>
+                                    <ul class="btn btn-outline-primary">
 
-                                            <ul>
+                                        <li class="link"><a href="#"><span class="fs-4" style="color: yellow;"><?= App\Session::getUser() ?></span></a>
+
                                                 <?php
                                                 // si l'utilisateur est connecté 
                                                 ?>
@@ -55,10 +53,12 @@
 
                                                 <li class="link"><a href="index.php?ctrl=security&action=logout">Déconnexion</a>
                                                 </li>
-                                            </ul>
+
+                                        </li>
                                     </ul>
+
                                 <?php } else { ?>
-                                    <ul class="navbar-nav">
+                                    <ul class="btn btn-outline-primary">
                                         <li class="link"><a href="index.php?ctrl=security&action=login">Connexion</a></li>
                                         <li class="link"><a href="index.php?ctrl=security&action=register">Inscription</a></li>
                                     </ul>
@@ -67,6 +67,11 @@
 
                         </div>
 
+
+                    </div>
+
+                    <div id="close-button">
+                               <i class="fa-solid fa-x"></i>
                     </div>
 
                 </nav>
@@ -171,7 +176,7 @@
                     return confirm("Etes-vous sûr de vouloir supprimer?")
                 })
                 $(".delete-user-btn").on("click", function () {
-                    return confirm("Êtes-vous sûr de vouloir supprimer vote compte ? Cette action est définitive.")
+                    return confirm("Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est définitive.")
                 })
                 $(".ban-btn").on("click", function () {
                     return confirm("Êtes-vous sûr de vouloir bannir cet utilisateur ?")

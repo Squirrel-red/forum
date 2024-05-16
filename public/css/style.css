@@ -92,34 +92,10 @@
     border-width: 3px;
   }
 
-
-  
-  /*///////// LINKS /////////*/
-  .link {
-    display: inline-flex;
-    transition: var(--transitionTime);
-    margin: 0 1%;
-  
-    a {
-      transition: var(--transitionTime);
-      color: azure;
-  
-      &:hover {
-        color: var(--lightgrey);
-      }
-    }
-  
-    &:hover {
-      a {
-        color: var(--lightgrey);
-      }
-    }
-  }
-  
   /* //////////// HEADER //////////// */
   header {
     z-index: 5;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     right: 0;
@@ -174,9 +150,34 @@
       }
     }
   }
+  
   .dropdown-menu {
     position: relative;   
   }
+  
+  /*///////// LINKS /////////*/
+  .link {
+    display: inline-flex;
+    transition: var(--transitionTime);
+    margin: 0 1%;
+  
+    a {
+      transition: var(--transitionTime);
+      color: azure;
+  
+      &:hover {
+        color: var(--lightgrey);
+      }
+    }
+  
+    &:hover {
+      a {
+        color: var(--lightgrey);
+      }
+    }
+  }
+  
+
   
   
   .cards-container {

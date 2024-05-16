@@ -4,10 +4,12 @@
 
 <h1>Liste des catégories</h1>
 
+<hr>
+
 <?php
 foreach($categories as $category ){ ?>
-    <div class="d-flex col-md-auto fs-2">
-        <p><a class='link-dark link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover'
+    <div class="btn btn-info">
+        <p><a class='link'
                 href="index.php?ctrl=forum&action=listTopicsByCategory&id=<?= $category->getId() ?>">
                 <?= $category->getName() ?>
             </a>

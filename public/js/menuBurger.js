@@ -1,4 +1,4 @@
-const nav = document.querySelector('navbar'),
+const nav = document.querySelector('nav'),
   toggleMenu = document.getElementById('toggle-menu'),
   closeButton = document.getElementById('close-button');
 

@@ -38,6 +38,7 @@ if (!isset($_SESSION['user'])) { ?>
                 <?= $profil->getEmail() ?>
             </p>
 
+
             <a href="index.php?ctrl=security&action=updateProfil" class="btn btn-outline-dark py=1">Modifier le profil</a>
             <a href="index.php?ctrl=security&action=updatePassword" class="btn btn-outline-dark py=1">Modifier le mot de
                 passe</a>
@@ -46,10 +47,13 @@ if (!isset($_SESSION['user'])) { ?>
 
     <?php } ?>
 
+
 <?php }
 if ($profil->getUsername() == "Utilisateur supprimé") {
 
 } else { ?>
+
+    <hr>
 
     <h2 class="mt-2">Topics créés</h2>
 
@@ -82,6 +86,8 @@ if ($profil->getUsername() == "Utilisateur supprimé") {
 
     ?>
 
+    <hr>
+
     <h2>Posts créés</h2>
 
     <?php if (isset($posts)) {
@@ -106,8 +112,13 @@ if ($profil->getUsername() == "Utilisateur supprimé") {
 
         <p>0 posts postés</p>
 
+       
+ 
     <?php }
+
 }
 if (App\Session::getUser() == $profil) { ?>
+
+    <hr>
     <a class="delete-user-btn btn btn-danger" href="index.php?ctrl=security&action=deleteUser">Supprimer le compte</a>
 <?php } ?>
