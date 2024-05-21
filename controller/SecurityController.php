@@ -418,5 +418,32 @@ class SecurityController extends AbstractController
 
             $this->redirectTo('forum', 'listPostsByTopic', $id);
         }
-    }    
+    } 
+    
+    
+    public function users()
+    {
+        $this->restrictTo("ROLE_USER");
+
+        $userManager = new UserManager();
+
+        if (isset($_POST['submit'])) {
+            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+
+            if ($username) {
+                $users = $userManager->findAllByUsername($username, ['username', 'ASC']);
+            }
+
+        } else {
+            $users = $userManager->findAll(['registerDate', 'DESC']);
+        }
+
+        return [
+            "view" => VIEW_DIR."security/users.php",
+            "meta_description" => "Liste des utilisateurs du forum",
+            "data" => [ 
+                "users" => $users 
+            ]
+        ];
+    }
 }
