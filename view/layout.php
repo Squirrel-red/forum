@@ -53,7 +53,7 @@
                                                 </li>
 
                                                 <!-- pour tester l'accès à la liste des utilisateurs car Session isAdmin ne marche pas -->
-                                                <li class="link"><a href="index.php?ctrl=security&action=users">Utilisateurs</a></li>
+                                                <!-- <li class="link"><a href="index.php?ctrl=security&action=users">Utilisateurs</a></li> -->
 
                                                 <li class="link"><a href="index.php?ctrl=security&action=logout">Déconnexion</a>
                                                 </li>
